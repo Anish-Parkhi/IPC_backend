@@ -4,6 +4,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import sectionNumberRouter from './routes/getSectionByNumber.js';
 import router from './routes/sections.js';
+import uniqueChapterRouter from './routes/getUniqueChapters.js';
+import getChapterRouter from './routes/getChapterByNumber.js';
 
 const MONGODB_URI =
   'mongodb+srv://anishparkhi2023:anish3377@ipc.7zjpaqw.mongodb.net/ipc?retryWrites=true&w=majority';
@@ -15,6 +17,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', router);
 app.use('/api', sectionNumberRouter);
+app.use('/api', uniqueChapterRouter);
+app.use('/api', getChapterRouter);
 
 mongoose
   .connect(MONGODB_URI, {

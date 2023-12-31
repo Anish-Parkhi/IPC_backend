@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
+const schema = mongoose.Schema;
 
 const sectionNameSchema = mongoose.Schema({
   chapter: {
-    type: Number,
+    type: schema.Types.Number,
   },
   chapter_title: {
     type: String,

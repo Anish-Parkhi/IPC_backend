@@ -2,7 +2,6 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
-import sectionNumberRouter from './routes/getSectionByNumber.js';
 import router from './routes/sections.js';
 import uniqueChapterRouter from './routes/getUniqueChapters.js';
 import getChapterRouter from './routes/getChapterByNumber.js';
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', router);
-app.use('/api', sectionNumberRouter);
 app.use('/api', uniqueChapterRouter);
 app.use('/api', getChapterRouter);
 

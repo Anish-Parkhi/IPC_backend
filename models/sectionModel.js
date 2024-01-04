@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 
 const sectionNameSchema = mongoose.Schema({
   chapter: {
-    type: schema.Types.Number,
+    type: Number,
   },
   chapter_title: {
     type: String,

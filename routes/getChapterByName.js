@@ -3,12 +3,12 @@ import sectionNameModel from '../models/sectionModel.js';
 
 const getChapterRouter = express.Router();
 
-getChapterRouter.get('/sections/:chapter', async (req, res) => {
-  const { chapter } = req.params;
+getChapterRouter.get('/sections/:chapter_title', async (req, res) => {
+  const { chapter_title } = req.params;
   console.log(req.params);
   try {
     const chapterTitles = await sectionNameModel.find({
-      chapter: chapter,
+      chapter_title: chapter_title,
     });
     if (!chapterTitles || chapterTitles.length === 0) {
       return res

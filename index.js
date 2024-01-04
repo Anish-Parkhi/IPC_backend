@@ -4,7 +4,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import router from './routes/sections.js';
 import uniqueChapterRouter from './routes/getUniqueChapters.js';
-import getChapterRouter from './routes/getChapterByNumber.js';
+import getChapterRouter from './routes/getChapterByName.js';
 
 const MONGODB_URI =
   'mongodb+srv://anishparkhi2023:anish3377@ipc.7zjpaqw.mongodb.net/ipc?retryWrites=true&w=majority';

@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import router from './routes/sections.js';
 import uniqueChapterRouter from './routes/getUniqueChapters.js';
 import getChapterRouter from './routes/getChapterByName.js';
+import sectionByNumberRouter from './routes/getSectionByNumber.js';
 
 const MONGODB_URI =
   'mongodb+srv://anishparkhi2023:anish3377@ipc.7zjpaqw.mongodb.net/ipc?retryWrites=true&w=majority';
@@ -17,6 +18,7 @@ app.use(cors());
 app.use('/api', router);
 app.use('/api', uniqueChapterRouter);
 app.use('/api', getChapterRouter);
+app.use('/api',sectionByNumberRouter)
 
 mongoose
   .connect(MONGODB_URI, {

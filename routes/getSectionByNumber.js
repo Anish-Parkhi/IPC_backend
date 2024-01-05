@@ -11,7 +11,7 @@ sectionByNumberRouter.get(
       const sectionData = await sectionNameModel.find({ Section: section });
       res.status(200).json(sectionData);
     } catch (error) {
-      req.status(400).json({ message: error.message });
+      res.status(400).json({ message: error.message });
     }
   }
 );

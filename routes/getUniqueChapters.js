@@ -7,7 +7,6 @@ uniqueChapterRouter.get('/uniqueChapters', async (req, res) => {
     const uniqueChapters = await sectionNameModel
       .find()
       .distinct('chapter_title')
-      .sort();
     if (!uniqueChapters || uniqueChapters.length === 0) {
       return res.status(404).json({ message: 'No chapters found' });
     }

@@ -2,10 +2,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
-import router from './routes/sections.js';
-import uniqueChapterRouter from './routes/getUniqueChapters.js';
 import getChapterRouter from './routes/getChapterByName.js';
 import sectionByNumberRouter from './routes/getSectionByNumber.js';
+import uniqueChapterRouter from './routes/getUniqueChapters.js';
+import searchBarQueryRouter from './routes/searchBarQuery.js';
+import router from './routes/sections.js';
 
 const MONGODB_URI =
   'mongodb+srv://anishparkhi2023:anish3377@ipc.7zjpaqw.mongodb.net/ipc?retryWrites=true&w=majority';
@@ -18,8 +19,8 @@ app.use(cors());
 app.use('/api', router);
 app.use('/api', uniqueChapterRouter);
 app.use('/api', getChapterRouter);
-app.use('/api',sectionByNumberRouter)
-
+app.use('/api', sectionByNumberRouter);
+app.use('/api', searchBarQueryRouter);
 mongoose
   .connect(MONGODB_URI, {
     // useNewUrlParser: true,

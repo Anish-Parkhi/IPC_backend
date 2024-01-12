@@ -7,6 +7,7 @@ import sectionByNumberRouter from './routes/getSectionByNumber.js';
 import uniqueChapterRouter from './routes/getUniqueChapters.js';
 import searchBarQueryRouter from './routes/searchBarQuery.js';
 import router from './routes/sections.js';
+import nameRouter from './routes/convertToInt.js';
 
 const MONGODB_URI =
   'mongodb+srv://anishparkhi2023:anish3377@ipc.7zjpaqw.mongodb.net/ipc?retryWrites=true&w=majority';
@@ -21,6 +22,7 @@ app.use('/api', uniqueChapterRouter);
 app.use('/api', getChapterRouter);
 app.use('/api', sectionByNumberRouter);
 app.use('/api', searchBarQueryRouter);
+app.use('/api',nameRouter);
 mongoose
   .connect(MONGODB_URI, {
     // useNewUrlParser: true,

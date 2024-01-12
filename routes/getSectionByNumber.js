@@ -8,7 +8,7 @@ sectionByNumberRouter.get(
   async (req, res) => {
     const { section } = req.params;
     try {
-      const sectionData = await sectionNameModel.find({ Section: section });
+      const sectionData = await sectionNameModel.find({ Section: { $eq: section } });
       res.status(200).json(sectionData);
     } catch (error) {
       res.status(400).json({ message: error.message });
